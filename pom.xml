@@ -30,6 +30,7 @@
 		<springsecurity.version>5.0.3.RELEASE</springsecurity.version>
 		<springdata.elatic.version>3.0.5.RELEASE</springdata.elatic.version>
 		<logpath>/${project.artifactId}</logpath>
+		<elastic.version>5.5.0</elastic.version>
 	</properties>
 
 
@@ -55,6 +56,17 @@
 				<groupId>${project.groupId}</groupId>
 				<version>${project.version}</version>
 			</dependency>
+
+
+
+			<dependency>
+				<artifactId>bq-elastic</artifactId>
+				<groupId>${project.groupId}</groupId>
+				<version>${project.version}</version>
+			</dependency>
+
+
+
 		</dependencies>
 	</dependencyManagement>
 

@@ -4,11 +4,13 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.bq.elastic.ElasticSearchMainConfiguration;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -23,6 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @PropertySource(value = { "classpath:application.properties" })
 @EnableTransactionManagement
 @EnableWebSecurity
+@Import(ElasticSearchMainConfiguration.class)
 public class ContextConfiguration {
 
 	@Autowired
