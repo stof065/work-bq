@@ -11,7 +11,40 @@
 	<modules>
 		<module>bq-model</module>
 		<module>bq</module>
+		<module>bq-elastic</module>
 	</modules>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>5.0.3.RELEASE</spring.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<hibernate.version>4.3.6.Final</hibernate.version>
+		<mysql.connector.version>5.1.31</mysql.connector.version>
+		<joda-time.version>2.3</joda-time.version>
+		<testng.version>6.9.4</testng.version>
+		<mockito.version>1.10.19</mockito.version>
+		<h2.version>1.4.187</h2.version>
+		<dbunit.version>2.2</dbunit.version>
+		<springsecurity.version>5.0.3.RELEASE</springsecurity.version>
+		<springdata.elatic.version>3.0.5.RELEASE</springdata.elatic.version>
+		<logpath>/${project.artifactId}</logpath>
+	</properties>
+
+
+	<repositories>
+		<repository>
+			<id>spring-libs-release</id>
+			<name>Spring Releases</name>
+			<url>https://repo.spring.io/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
 
 
 
@@ -24,6 +57,17 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+
+	</build>
 
 
 </project>
