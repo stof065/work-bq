@@ -1,8 +1,10 @@
 package org.bq.elastic.repository;
 
 import org.bq.elastic.model.DummyDocument;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-public interface DummyDocumentRepository extends Repository<DummyDocument, Long> {
+public interface DummyDocumentRepository extends ElasticsearchRepository<DummyDocument, Long> {
+
+	
 
 }
