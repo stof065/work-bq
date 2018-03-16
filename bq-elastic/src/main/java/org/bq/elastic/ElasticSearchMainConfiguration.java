@@ -23,7 +23,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 @Configuration
 @ComponentScan
 @EnableElasticsearchRepositories(basePackages = "org.bq.elastic.repository")
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application-elastic.properties")
 public class ElasticSearchMainConfiguration {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ElasticSearchMainConfiguration.class);
@@ -39,13 +39,19 @@ public class ElasticSearchMainConfiguration {
 	@SuppressWarnings("resource")
 	@Bean
 	public Client client() {
+
+		String host = environment.getProperty("spring.data.elasticsearch.properties.host");
+		Integer port = Integer.parseInt(environment.getProperty("spring.data.elasticsearch.properties.port"));
+		
+		LOG.info("creating transport client for elastic server  at host : {} and port : {}",host,port);
+
 		Settings settings = Settings.builder()
 				.put("cluster.name", environment.getProperty("spring.data.elasticsearch.properties.cluster-name"))
 				.build();
 		TransportClient client = null;
 		try {
 			client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(host), port));
 		} catch (UnknownHostException e) {
 			LOG.error("error creating client elasticsearch");
 			throw new RuntimeException("error creating client elasticsearch");
