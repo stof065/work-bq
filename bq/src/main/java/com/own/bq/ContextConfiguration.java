@@ -4,6 +4,7 @@ import org.bq.elastic.ElasticSearchMainConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -18,6 +19,7 @@ import com.own.bq.config.persistence.JpaConfiguration;
 @EnableTransactionManagement
 @EnableWebSecurity
 @Import({ ElasticSearchMainConfiguration.class, JpaConfiguration.class })
+@EnableAspectJAutoProxy(proxyTargetClass=true)
 public class ContextConfiguration {
 
 	
