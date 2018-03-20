@@ -1,0 +1,4 @@
+create table dummy ( id TINYINT primarykey , name varchar(50));
+
+
+insert into dummy values (1,'dummy');

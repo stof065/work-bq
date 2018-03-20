@@ -1,0 +1,1 @@
+create table dummy ( id TINYINT primarykey , name varchar(50));
