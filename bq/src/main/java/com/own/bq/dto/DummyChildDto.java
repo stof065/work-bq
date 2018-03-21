@@ -14,6 +14,8 @@ public class DummyChildDto {
 		this.id =  dd.getId();
 		this.name= dd.getName();
 	}
+	
+	public DummyChildDto() {}
 
 	public Long getId() {
 		return id;

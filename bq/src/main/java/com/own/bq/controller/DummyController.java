@@ -44,6 +44,14 @@ public class DummyController {
 	}
 	
 	
+	@PostMapping("/{id}/childs")
+	@ApiOperation(value = "inserer un dummyChild pour dummy")
+	public DummyChildDto addDummyChildForDummy(@Validated @RequestBody DummyChildDto dummyChild,@PathVariable("id") Long id) {
+		return dummyChildService.addDummyChildDummy(id,dummyChild);
+	}
+	
+	
+	
 	
 
 	@GetMapping("/{id}")

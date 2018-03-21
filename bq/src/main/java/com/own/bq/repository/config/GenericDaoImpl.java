@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
 public class GenericDaoImpl<T, PK> implements GenericDao<T, PK> {
 
 	@PersistenceContext
-	EntityManager em;
+	protected EntityManager em;
 
 	Class<T> type;
 
