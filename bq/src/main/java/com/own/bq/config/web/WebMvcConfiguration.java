@@ -19,7 +19,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
-		BqUtils.executeActionifSpecificProfileActivated("pre-prod", (Void x)->registerSwagger(registry));
+		BqUtils.executeActionifSpecificProfileActivated("pre-prod", ()->registerSwagger(registry));
 		
 		
 	}

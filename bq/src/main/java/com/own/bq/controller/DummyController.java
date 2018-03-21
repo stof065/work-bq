@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.own.bq.dto.DummyChildDto;
 import com.own.bq.dto.DummyDto;
+import com.own.bq.service.DummyChildService;
 import com.own.bq.service.DummyService;
 
 import io.swagger.annotations.ApiOperation;
@@ -25,12 +27,24 @@ public class DummyController {
 
 	@Autowired
 	DummyService dummyService;
+	
+	@Autowired
+	DummyChildService dummyChildService;
 
 	@GetMapping
 	@ApiOperation(value = "extraire tout les dummies")
 	public List<DummyDto> getAllDummies() {
 		return dummyService.findAllDummyDto();
 	}
+	
+	@GetMapping("/{id}/childs")
+	@ApiOperation(value = "extraire tout les dummyChilds")
+	public List<DummyChildDto> getAllDummieChilds(@PathVariable("id") Long id) {
+		return dummyChildService.findDummyChildsByDummy(id);
+	}
+	
+	
+	
 
 	@GetMapping("/{id}")
 	@ApiOperation(value = "extraire un dummy par id")

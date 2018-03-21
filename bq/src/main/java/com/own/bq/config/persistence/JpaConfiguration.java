@@ -19,7 +19,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @ComponentScan({ "com.own.bq.service", "com.own.bq.repository" })
-@Import(ElasticSearchMainConfiguration.class)
+@Import({ElasticSearchMainConfiguration.class,LiquibaseConfiguration.class})
 public class JpaConfiguration {
 	@Autowired
 	Environment environment;

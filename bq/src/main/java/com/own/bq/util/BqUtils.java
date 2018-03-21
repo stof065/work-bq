@@ -1,7 +1,5 @@
 package com.own.bq.util;
 
-import java.util.function.Consumer;
-
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -17,13 +15,12 @@ public class BqUtils implements InitializingBean {
 	@Autowired
 	ApplicationContext ctx ;
 
-	public static void executeActionifSpecificProfileActivated(String profile, Consumer<Void> consumer) {
+	public static void executeActionifSpecificProfileActivated(String profile, Runnable consumer) {
 
 		String activeProfile = environement.getProperty("spring.profiles.active");
 
 		if (activeProfile != null && activeProfile.contains(profile)) {
-			consumer.accept(null);
-
+			consumer.run();
 		}
 
 	}
