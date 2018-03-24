@@ -26,6 +26,12 @@ public class DummyControllerITTest extends AbstractControllerIntegrationTest {
 		LOG.info("------------------before methode of test : {} ----------------------",
 				DummyControllerITTest.class.getSimpleName());
 
+
+		dd = new DummyDto();
+		dd.setId(1L);
+		dd.setName("dummy");
+
+		
 	}
 
 	@Test

@@ -6,3 +6,4 @@ create  table IF NOT EXISTS  dummy (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 truncate table dummy;
 
 insert into dummy values (1,'dummy');
+insert into dummy values (2,'dummy 1');

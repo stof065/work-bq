@@ -214,27 +214,6 @@
 			<version>1.0</version>
 		</dependency>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		<!-- Testing dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>

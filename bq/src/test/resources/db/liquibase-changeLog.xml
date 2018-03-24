@@ -5,5 +5,9 @@
    http://www.liquibase.org/xml/ns/dbchangelog 
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-	<include file="classpath:db/fixtures/${test-fixture-strategy}-fixture.sql" />
+
+<!-- 	<changeSet id="test-changset" author="abourouh"> -->
+<!-- 		<customChange class="com.own.bq.repository.config.FixtureTestHandler"> -->
+<!-- 				</customChange> -->
+<!-- 	</changeSet> -->
 </databaseChangeLog>

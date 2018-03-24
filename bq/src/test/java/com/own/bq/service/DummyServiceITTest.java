@@ -25,17 +25,14 @@ public class DummyServiceITTest extends AbstractIntegrationTest {
 
 	@BeforeMethod
 	public void init() {
-		dummy = new Dummy();
-		dummy.setName("test name");
-		dummy = dummyRepository.save(dummy);
-		dummyDto = new DummyDto(dummy);
+		
 
 	}
 
 	@Test
 	public void findAllDummyDto() {
 		Assertions.assertThat(dummyService.findAllDummyDto().size())
-		.isEqualTo(1);
+		.isEqualTo(2);
 	}
 
 	
