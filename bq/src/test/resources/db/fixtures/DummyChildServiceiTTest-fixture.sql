@@ -5,6 +5,8 @@ create  table IF NOT EXISTS  dummyChild (id INT NOT NULL AUTO_INCREMENT PRIMARY 
 
 truncate table dummychild;
 
-ALTER table dummyChild add constraint foreign_key(dummy_id) ;
+ALTER table dummyChild add constraint foreign key dummy_id references Dummy(id) ;
 
-insert into dummychild values (1,'dummy');
+
+insert into dummy values(1,'dummy');
+insert into dummychild values (1,'dummy child',1);

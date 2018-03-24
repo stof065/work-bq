@@ -3,6 +3,7 @@ package com.own.bq.service.config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import org.testng.annotations.AfterClass;
@@ -12,6 +13,7 @@ import com.own.bq.config.persistence.JpaConfiguration;
 
 @ContextConfiguration(classes = { JpaConfiguration.class})
 @TestPropertySource("classpath:application.properties")
+@TestExecutionListeners(TestNameExecutionListener.class)
 public abstract class AbstractIntegrationTest extends AbstractTransactionalTestNGSpringContextTests  {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractIntegrationTest.class);

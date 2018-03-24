@@ -1,5 +1,7 @@
 package com.own.bq.service;
 
+import java.util.List;
+
 import org.assertj.core.api.Assertions;
 import org.bq.model.Dummy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +27,15 @@ public class DummyServiceITTest extends AbstractIntegrationTest {
 
 	@BeforeMethod
 	public void init() {
-		dummy = new Dummy();
-		dummy.setName("test name");
-		dummy = dummyRepository.save(dummy);
-		dummyDto = new DummyDto(dummy);
+		
 
 	}
 
 	@Test
 	public void findAllDummyDto() {
-		Assertions.assertThat(dummyService.findAllDummyDto().size())
-		.isEqualTo(1);
+		List<DummyDto> dummies = dummyService.findAllDummyDto();
+		Assertions.assertThat(dummies.size())
+		.isEqualTo(2);
 	}
 
 	
